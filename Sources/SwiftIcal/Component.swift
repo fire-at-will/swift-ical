@@ -437,6 +437,10 @@ extension VEvent: LibicalComponentConvertible {
         if let organizer = organizer {
             icalcomponent_add_property(comp, organizer.libicalProperty())
         }
+        
+        if let recurranceRule = recurranceRule {
+            icalcomponent_add_property(comp, recurranceRule.libicalProperty())
+        }
         return comp!
     }
 }
